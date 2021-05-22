@@ -3,8 +3,6 @@
 import { unit, unitForm, container, unitDelete } from './template';
 import FORM_ERRORS from '../data/formErrors';
 import UnitAPI from './unitApi';
-// import formatDate from './formatDate';
-// import idGenerator from './idGenerator';
 
 export default class Widget {
   constructor() {
@@ -17,6 +15,9 @@ export default class Widget {
     this.renderUnits();
   }
 
+  /**
+   * Renders empty container
+   */
   renderContainer() {
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add('wrapper');
