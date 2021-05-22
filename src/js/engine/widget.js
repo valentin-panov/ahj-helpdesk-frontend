@@ -192,27 +192,24 @@ export default class Widget {
       return;
     }
 
-    form.elements.description.value.replace(/\n/g, '<br>');
     const formData = new FormData(form);
-
-    this.allFormsClose();
 
     const { id } = element.closest('.form').dataset;
 
+    const object = {};
+    formData.forEach((value, key) => {
+      object[key] = value;
+    });
+
+    object.description = object.description.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
     if (!id) {
-      const object = {};
-      formData.forEach((value, key) => {
-        object[key] = value;
-      });
       await this.api.create(object);
     } else if (id) {
-      const object = {};
-      formData.forEach((value, key) => {
-        object[key] = value;
-      });
       await this.api.update(id, object);
     }
 
+    this.allFormsClose();
     await this.renderUnits();
   }
 
