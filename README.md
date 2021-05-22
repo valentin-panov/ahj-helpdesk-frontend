@@ -1,6 +1,7 @@
 Правила сдачи задания:
 
 [![Build status](https://ci.appveyor.com/api/projects/status/g9fi1cro7ik2elk8?svg=true)](https://ci.appveyor.com/project/vapanov/ahj-helpdesk-frontend)
+WEB-VERSION: https://valentin-panov.github.io/ahj-helpdesk-frontend/
 
 1. **Важно**: в рамках этого ДЗ можно использовать npm (а значит, никакого `yarn.lock` в репозитории быть не должно)
 1. Frontend должен собираться через Webpack (включая картинки и стили) и выкладываться на Github Pages через Appveyor
